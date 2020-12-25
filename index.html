@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Морской бой</title>
+	<link rel="shortcut icon" href="img/battleshipIcon.png" type="image/x-icon">
+    <link href="css/styleMenu.css" rel="stylesheet"/>
+	<script src="js/menu.js"></script>
+</head>
+<body onload="setName()">
+	<video muted autoplay loop poster="img/menuPic.jpg">
+		<source src="img/menu.mp4" type="video/mp4">
+	</video>
+	<header>
+		<p id="name" onclick="enterName()">Имя игрока:</p>
+		<div id="newName" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close" onclick="closeClick()">&times;</span>
+					<h1 id="capInf">Имя капитана</h1>
+				</div>
+				<div class="modal-body">
+					<div class="inputForm">
+						<input id="newNameInput" type="text" maxlength="10">
+						<button id="newNameOk" onclick="changeName()">OK</button>
+					</div>
+					<h1 id="inf">* Максимально количество символов в имени - 10.</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div style="font-size: 10vh; color: #0000CD">МОРСКОЙ БОЙ</div>
+		<a class="btns" id="a1" href="pages/preparationAndPlay.html"><button id="1p" onclick="btnClick(1)">1 ИГРОК</button></a>
+		<a class="btns" id="a2" href="pages/preparationAndPlay.html"><button id="2p" onclick="btnClick(2)">2 ИГРОКА</button></a>
+		<button class="btns" id="rls" onclick="rulesClick()">ПРАВИЛА</button>
+		<button class="btns" id="rcrds" onclick="recordsClick()">РЕКОРДЫ</button>
+		<div id="rules" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+          <h1 id="rlsTxt">Правила</h1>
+					<span class="close" onclick="closeClick(1)">&times;</span>
+				</div>
+				<div class="modal-body">
+					<iframe id="rulesText" frameborder="no" width="100%" height="100%" seamless></iframe>
+				</div>
+			</div>
+		</div>
+		<div id="records" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 id="rcrdsTxt">Рекорды</h1>
+          <span class="close" onclick="closeClick(2)">&times;</span>
+				</div>
+				<div class="modal-body">
+					<div class="modal-bodyCol" id="recordsListCol1"></div>
+					<div class="modal-bodyCol" id="recordsListCol2"></div>
+					<div class="modal-bodyCol" id="recordsListCol3"></div>
+				</div>
+      <div class="clearRec">
+        <a class="clearRecChild" id="saveRec" onclick="saveRecords()"><button class="clearRecChildBut" id="saveRecBut">СОХРАНИТЬ</button></a>
+        <a class="clearRecChild" id="clearRec" onclick="clearRecords()"><button class="clearRecChildBut" id="clearRecBut">ОЧИСТИТЬ</button></a>
+      </div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<button id="lang" onclick="langClick()">РУ</button>
+	</footer>
+</body>
+</html>

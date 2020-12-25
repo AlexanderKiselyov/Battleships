@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Морской бой</title>
+	<link rel="shortcut icon" href="../img/battleshipIcon.png" type="image/x-icon">
+    <link href="../css/stylePrepAndPlay.css" rel="stylesheet"/>
+	<script src="../js/menu.js"></script>
+	<script src="../js/preparation.js"></script>
+	<script src="../js/play.js"></script>
+	<script src="../js/AI.js"></script>
+	<style>body { background: url(../img/sea.gif) 0 100% repeat-x; }</style>
+</head>
+<body onload="addParams(); toMainMenuIfNoAction()" onmousedown="mouseDown(event)" onmouseup="mouseUp(event)" onmousemove="mouseMove(event)">
+	<input type="button" id="mainMenu" onclick="mainMenuClick()"></input>
+	<input type="button" id="autoAlign" onclick="autoAlignClick(curPlayer)"></input>
+	<canvas id="canvas"></canvas>
+	<div id="newName" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close" onclick="closeClick(3)">&times;</span>
+				<h1 id="capInfSec">Имя второго капитана</h1>
+			</div>
+			<div class="modal-body">
+				<div class="inputForm">
+					<input id="newNameInput" type="text" maxlength="10">
+					<button id="newNameOk" onclick="changeName()">OK</button>
+				</div>
+				<h1 id="infSec">* Максимально количество символов в имени - 10.</h1>
+			</div>
+		</div>
+	</div>
+	<div id="result" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 id="vic">Победа!</h1>
+			</div>
+			<div id="resultText"></div>
+			<h1></h1>
+			<div class="endGame">
+				<button class="endGameChild" id="newGame" onclick="newGame()"></button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
